@@ -1,0 +1,120 @@
+\documentclass[a4paper, 12pt]{report}
+\usepackage{classicthesis}
+% \usepackage[left=3cm,right=3cm,top=5cm,bottom=4cm,includehead,includefoot]{geometry}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm,includehead,includefoot]{geometry}
+\usepackage{lipsum}
+\usepackage[pdftex]{graphicx}
+
+\usepackage[english]{babel}
+\usepackage[nottoc]{tocbibind}
+
+\usepackage{hyperref}
+\hypersetup{%draft, % = no hyperlinking at all (useful in b/w printouts)
+    %colorlinks=true, linktocpage=true, pdfstartpage=3, pdfstartview=FitV,%
+    colorlinks=true, linktocpage=true, pdfstartpage=1, pdfstartview=FitV,%
+    % uncomment the following line if you want to have black links (e.g., for printing)
+    %colorlinks=false, linktocpage=false, pdfborder={0 0 0}, pdfstartpage=3, pdfstartview=FitV,% 
+    breaklinks=true, pdfpagemode=UseNone, pageanchor=true, pdfpagemode=UseOutlines,%
+    plainpages=false, bookmarksnumbered, bookmarksopen=true, bookmarksopenlevel=1,%
+    hypertexnames=true, pdfhighlight=/O,%hyperfootnotes=true,%nesting=true,%frenchlinks,%
+    urlcolor=webbrown, linkcolor=RoyalBlue, citecolor=blue, %pagecolor=RoyalBlue,%
+    %urlcolor=Black, linkcolor=Black, citecolor=Black, %pagecolor=Black,%
+    pdftitle={},%
+    pdfauthor={},%
+    pdfsubject={},%
+    pdfkeywords={},%
+    pdfcreator={pdfLaTeX},%
+    pdfproducer={LaTeX with hyperref and classicthesis}%
+}   
+
+\makeatother
+
+% Align TOC page numbers to the right
+\renewcommand{\cftpartleader}{\hfill}
+\renewcommand{\cftpartafterpnum}{\cftparfillskip}
+\renewcommand{\cftchapleader}{\hfill} 
+\renewcommand{\cftsecleader}{\hfill}
+\renewcommand{\cftsubsecleader}{\hfill}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % add dots to toc section
+\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}} % add dots to toc subsection
+\renewcommand{\cftchapfont}{\bfseries\color{red}} %orange chapter font?
+%\input{classicthesis-config}
+
+
+\usepackage{bookmark}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+% \usepackage[subfigure]{tocloft} % subfigure option only if using subfigure package
+\renewcommand{\cfttoctitlefont} % ToC title
+          {\usefont{T1}{qhv}{b}{n}\selectfont\huge}
+\renewcommand{\cftchapfont} % chapter titles
+          {\usefont{T1}{qhv}{b}{n}\selectfont}
+\renewcommand{\cftsecfont} % section titles
+          {\usefont{T1}{bch}{m}{n}\selectfont}
+\renewcommand{\cftsubsecfont} % subsection titles
+          {\usefont{T1}{bch}{m}{n}\selectfont} 
+\renewcommand{\cftchappagefont} % chapter page numbers
+          {\usefont{T1}{bch}{b}{n}\selectfont}
+\renewcommand{\cftsecpagefont} % section page numbers
+          {\cftsecfont} 
+\renewcommand{\cftsubsecpagefont} % subsection page numbers
+          {\cftsubsecfont}
+
+\makeatletter
+\renewcommand*{\numberline}[1]
+{%
+  \hb@xt@\@tempdima{\hfil#1 }%
+}
+
+\begin{document}
+
+\input{EBSYNNN_TitlePage.tex}
+
+\tableofcontents
+
+\chapter{Summary}
+
+\lipsum
+
+\newpage
+
+\part{}
+\chapter{Introduction}
+\lipsum
+\section{Section 01}
+This is a citation \cite{grand}.
+
+\chapter{Chapter 2}
+
+\section{Section 2.2}
+Inmon\cite{billinmonbdw}....... 
+\begin{enumerate}
+  \item Item 1
+  \item Item 2
+\end{enumerate}
+
+\chapter{Chapter 3}
+\section{Section 3.1}
+
+\newpage
+\part{}
+
+\chapter{Case Study}
+\section{Scenario}
+\lipsum
+
+\section{Another Section}
+
+
+% Move conclusion out of part 2
+% \addtocontents{toc}{\protect\addvspace{2.25em plus 1pt}}
+% \bookmarksetup{startatroot}
+% \newpage
+% \chapter{Conclusion}
+
+%References
+\newpage
+\bibliographystyle{unsrt}
+\bibliography{EBSYNNN_References}
+
+\end{document}
